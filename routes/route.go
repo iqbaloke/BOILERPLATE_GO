@@ -15,5 +15,6 @@ func Route(route *fiber.App) {
 	})
 
 	route.Get("/users", Controllers.UsersIndex)
+	route.Post("/users", Controllers.UserStore)
 
 }

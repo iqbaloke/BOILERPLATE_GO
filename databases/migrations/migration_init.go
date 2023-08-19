@@ -11,7 +11,7 @@ func RunMigration() {
 	//if checkUser {
 	//	fmt.Println("ready")
 	//} else {
-	err := config.DB.AutoMigrate(&User{})
+	err := config.DB.AutoMigrate(&UserMigration{})
 
 	if err != nil {
 		log.Println(err)

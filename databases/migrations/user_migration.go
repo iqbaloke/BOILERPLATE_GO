@@ -2,7 +2,7 @@ package migrations
 
 import "time"
 
-type User struct {
+type UserMigration struct {
 	Id          uint      `json:"id" gorm:"primaryKey"`
 	Name        string    `json:"name" gorm:"not null"`
 	Email       string    `json:"email" gorm:"not null; unique;"`
