@@ -26,7 +26,7 @@ func UserStore(ctx *fiber.Ctx) error {
 	err := ctx.BodyParser(user)
 
 	if err := Validation.ValidationRequest(ctx, user); err != nil {
-		return Exception.GetErrorValidation(ctx, err)
+		return Exception.ErrorValidation(ctx, err)
 	}
 
 	if err != nil {
