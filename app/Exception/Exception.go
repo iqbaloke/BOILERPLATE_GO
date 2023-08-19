@@ -13,6 +13,6 @@ func GetErrorValidation(c *fiber.Ctx, err error) error {
 		out[i] = Validation.ValidationFormatting{Message: Validation.ValidationMessage(fe.Tag(), fe.Field(), fe.Param())}
 	}
 
-	return Providers.VALIDATION(c, out, "Data Gagal Ditambahkan", fiber.StatusUnprocessableEntity)
+	return Providers.RESPONSEJSON(c, out, "Data Gagal Ditambahkan", fiber.StatusUnprocessableEntity)
 
 }

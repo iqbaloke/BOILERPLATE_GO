@@ -18,7 +18,7 @@ func UsersIndex(ctx *fiber.Ctx) error {
 	if result.Error != nil {
 		log.Println(result.Error)
 	}
-	return Providers.SUCCESS(ctx, users, "Data Collection Berhasil Diambil", 200)
+	return Providers.RESPONSEJSON(ctx, users, "Data Collection Berhasil Diambil", fiber.StatusOK)
 }
 
 func UserStore(ctx *fiber.Ctx) error {
@@ -41,9 +41,8 @@ func UserStore(ctx *fiber.Ctx) error {
 
 	errCreateDb := config.DB.Create(&newUser).Error
 	if errCreateDb != nil {
-		log.Println(errCreateDb)
-		return Providers.VALIDATION(ctx, errCreateDb.Error(), "Data Gagal Ditambahkan", 422)
+		return Providers.RESPONSEJSON(ctx, errCreateDb.Error(), "Data Gagal Ditambahkan", fiber.StatusOK)
 	}
 
-	return Providers.SUCCESS(ctx, newUser, "Data Berhasil Ditambahkan", 200)
+	return Providers.RESPONSEJSON(ctx, newUser, "Data Berhasil Ditambahkan", fiber.StatusOK)
 }
