@@ -10,10 +10,10 @@ func SUCCESS(ctx *fiber.Ctx, data interface{}, message string, response int) err
 	})
 }
 
-func VALIDATION(ctx *fiber.Ctx, data interface{}, message string, status_code int) error {
-	return ctx.Status(status_code).JSON(fiber.Map{
+func VALIDATION(ctx *fiber.Ctx, data interface{}, message string, statusCode int) error {
+	return ctx.Status(statusCode).JSON(fiber.Map{
 		"message":     message,
-		"status_code": status_code,
+		"status_code": statusCode,
 		"data":        data,
 	})
 }
