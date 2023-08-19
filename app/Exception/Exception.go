@@ -16,7 +16,3 @@ func ErrorValidation(c *fiber.Ctx, err error) error {
 	return Providers.RESPONSEJSON(c, out, "Data Gagal Ditambahkan", fiber.StatusUnprocessableEntity)
 
 }
-
-//func ()  {
-//
-//}
